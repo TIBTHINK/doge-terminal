@@ -6,7 +6,7 @@ try:
     while True:
         sleep(2)
 
-        response = requests.get("https://api.binance.us/api/v3/ticker/price?symbol=DOGEUSD")
+        response = requests.get("https://api.binance.us/api/v3/ticker/price?symbol=SHIBUSDT")
         output = response.json()
         data = json.dumps(output['price'])
         punctuation = '''"'''
@@ -15,15 +15,13 @@ try:
             if character not in punctuation:
                 remove_punct = remove_punct + character
         
-        doge_ammout = float(805.77685148)
+        shib_ammout = float(9641410.96881237)
         price = remove_punct
         price_as_float = float(price)
-        net_profit = str(price_as_float * doge_ammout)
+        net_profit = str(price_as_float * shib_ammout)
 
 
-        print('current price of doge: '+ price, flush = True)
-        print('how much doge you have: ' + net_profit + '\r', flush = True)
-        sys.stdout.flush()
+        print("current price of doge: " + net_profit, flush=True)
 except KeyboardInterrupt:
     exit('\n')
 
