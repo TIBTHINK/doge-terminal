@@ -15,7 +15,7 @@ try:
             if character not in punctuation:
                 remove_punct = remove_punct + character
         
-        shib_ammout = float(9641410.96881237)
+        shib_ammout = float(14610505.01186419)
         price = remove_punct
         price_as_float = float(price)
         net_profit = str(price_as_float * shib_ammout)
